@@ -1,25 +1,11 @@
 {
-  "name": "vue-jstree",
-  "version": "2.1.6",
-  "description": "a tree plugin for vue2",
-  "keywords": [
-    "vue2",
-    "tree"
-  ],
-  "author": "zdy1988 <virus_zhh@126.com>",
-  "main": "dist/vue-jstree.js",
-  "private": false,
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/zdy1988/vue-jstree.git"
-  },
+  "name": "example",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name vue-jstree src/index.js",
-    "lint": "vue-cli-service lint",
-    "clean": "rm -rf dist"
-
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "core-js": "^3.8.3",

@@ -10,4 +10,6 @@ yarn-error.log
 *.njsproj
 *.sln
 
+dist
+
 gh-pages/

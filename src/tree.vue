@@ -32,7 +32,7 @@
     </div>
 </template>
 <script>
-    import TreeItem from './tree-item.vue'
+    import TreeItem from '@/tree-item.vue'
 
     let ITEM_ID = 0
     let ITEM_HEIGHT_SMALL = 18
