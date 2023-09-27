@@ -10,7 +10,7 @@
         @drop.stop.prevent="handleItemDrop($event, self, self.model)">
         <div role="presentation" :class="wholeRowClasses" v-if="isWholeRow">&nbsp;</div>
         <i class="tree-icon tree-ocl" role="presentation" @click="handleItemToggle"></i>
-        <div :class="anchorClasses" v-on="events">
+        <div :class="anchorClasses" v-bind="$attrs">
             <i class="tree-icon tree-checkbox" role="presentation" v-if="showCheckbox && !model.loading"></i>
             <slot :vm="self" :model="model">
                 <i :class="themeIconClasses" role="presentation" v-if="!model.loading"></i>
