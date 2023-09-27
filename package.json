@@ -1,6 +1,6 @@
 {
   "name": "@ventralnet/vue3-jstree",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "a tree plugin for vue3, forked from https://github.com/zdy1988/vue-jstree",
   "keywords": [
     "vue3",
