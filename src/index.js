@@ -1,4 +1,4 @@
-import VJstree from './tree.vue'
+import VJstree from '@/tree.vue'
 
 const plugin = {
   install(app, options) {

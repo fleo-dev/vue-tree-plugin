@@ -1,6 +1,6 @@
 {
   "name": "@ventralnet/vue3-jstree",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "a tree plugin for vue3, forked from https://github.com/zdy1988/vue-jstree",
   "keywords": [
     "vue3",
@@ -18,6 +18,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build --target lib --name vue-jstree src/index.js",
     "lint": "vue-cli-service lint",
+    "pack": "npm pack",
     "clean": "rm -rf dist"
   },
   "peerDependencies": {

@@ -182,8 +182,8 @@
 </template>
 
 <script>
-    import VJstree from '@/lib/tree.vue';
-    import '@/lib/less/style.less';
+    import { VJstree } from '@ventralnet/vue3-jstree';
+    import '@ventralnet/vue3-jstree/dist/vue-jstree.css';
 
     export default {
         name: 'app',

@@ -2,7 +2,7 @@
     <div :class="classes" role="tree" onselectstart="return false">
         <ul :class="containerClasses" role="group">
             <tree-item v-for="(child, index) in data"
-                       refs="treeItemChildren"
+                       ref="treeItemChildren"
                        :key="index"
                        :data="child"
                        :text-field-name="textFieldName"
@@ -33,7 +33,7 @@
     </div>
 </template>
 <script>
-    import TreeItem from './tree-item.vue'
+    import TreeItem from '@/tree-item.vue'
 
     let ITEM_ID = 0
     let ITEM_HEIGHT_SMALL = 18
@@ -164,7 +164,7 @@
             },
             handleRecursionNodeChilds(node, func) {
                 if (func(node) !== false) {
-                    const children = this.$refs.treeItemChildren || []
+                    const children = node.$refs.treeItemChildren || []
                     if (children.length > 0) {
                         for (let childNode of children) {
                             if (!childNode.disabled) {
@@ -294,5 +294,5 @@
     }
 </script>
 <style lang="less">
-    @import "./less/style";
+    @import "~@/less/style";
 </style>

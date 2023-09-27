@@ -12,4 +12,6 @@ yarn-error.log
 
 dist
 
+ventralnet-vue3-jstree*.tgz
+
 gh-pages/
