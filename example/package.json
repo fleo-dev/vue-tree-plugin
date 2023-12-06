@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@ventralnet/vue3-jstree": "^0.0.11",
     "core-js": "^3.8.3",
     "vue": "^3.2.13"
   },
