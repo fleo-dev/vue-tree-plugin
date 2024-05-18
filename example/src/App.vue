@@ -137,7 +137,7 @@
                               @item-drag-end="itemDragEnd"
                               @item-drop-before = "itemDropBefore"
                               @item-drop="itemDrop">
-                        <template slot-scope="_">
+                        <template v-slot="_">
                             <div style="display: inherit; width: 200px" @click.ctrl="customItemClickWithCtrl">
                                 <i :class="_.vm.themeIconClasses" role="presentation" v-if="!_.model.loading"></i>
                                 {{_.model.text}}
@@ -182,8 +182,14 @@
 </template>
 
 <script>
+    import { VJstree } from '@ventralnet/vue3-jstree';
+    import '@ventralnet/vue3-jstree/dist/vue-jstree.css';
+
     export default {
         name: 'app',
+        components: {
+            VJstree
+        },
         data () {
             return {
                 msg: 'A Tree Plugin For Vue2',

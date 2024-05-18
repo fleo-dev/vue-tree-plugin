@@ -2,6 +2,7 @@
     <div :class="classes" role="tree" onselectstart="return false">
         <ul :class="containerClasses" role="group">
             <tree-item v-for="(child, index) in data"
+                       ref="treeItemChildren"
                        :key="index"
                        :data="child"
                        :text-field-name="textFieldName"
@@ -21,7 +22,7 @@
                        :on-item-drag-end="onItemDragEnd"
                        :on-item-drop="onItemDrop"
                        :klass="index === data.length-1?'tree-last':''">
-                <template slot-scope="_">
+                <template v-slot="_">
                     <slot :vm="_.vm" :model="_.model">
                         <i :class="_.vm.themeIconClasses" role="presentation" v-if="!_.model.loading"></i>
                         <span v-html="_.model[textFieldName]"></span>
@@ -32,7 +33,7 @@
     </div>
 </template>
 <script>
-    import TreeItem from './tree-item.vue'
+    import TreeItem from '@/tree-item.vue'
 
     let ITEM_ID = 0
     let ITEM_HEIGHT_SMALL = 18
@@ -163,8 +164,9 @@
             },
             handleRecursionNodeChilds(node, func) {
                 if (func(node) !== false) {
-                    if (node.$children && node.$children.length > 0) {
-                        for (let childNode of node.$children) {
+                    const children = node.$refs.treeItemChildren || []
+                    if (children.length > 0) {
+                        for (let childNode of children) {
                             if (!childNode.disabled) {
                                 this.handleRecursionNodeChilds(childNode, func)
                             }
@@ -222,7 +224,7 @@
                                         }
                                     }
                                     var dataItem = self.initializeDataItem(data[i])
-                                    self.$set(oriParent, i, dataItem)
+                                    oriParent[i] = dataItem
                                 }
                             } else {
                                 oriNode.model[self.childrenFieldName] = []
@@ -282,7 +284,7 @@
         },
         mounted() {
             if (this.async) {
-                this.$set(this.data, 0, this.initializeLoading())
+                this.data[0] = this.initializeLoading()
                 this.handleAsyncLoad(this.data, this)
             }
         },
@@ -292,5 +294,5 @@
     }
 </script>
 <style lang="less">
-    @import "./less/style";
+    @import "~@/less/style";
 </style>

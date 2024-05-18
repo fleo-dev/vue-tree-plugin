@@ -1,38 +1,40 @@
 {
-  "name": "vue-jstree",
-  "version": "2.1.6",
-  "description": "a tree plugin for vue2",
+  "name": "@ventralnet/vue3-jstree",
+  "version": "0.0.11",
+  "description": "a tree plugin for vue3, forked from https://github.com/zdy1988/vue-jstree",
   "keywords": [
-    "vue2",
+    "vue3",
     "tree"
   ],
-  "author": "zdy1988 <virus_zhh@126.com>",
-  "main": "dist/vue-jstree.js",
+  "author": "ventralnet <matt.kirkley@gmail.com>",
+  "main": "dist/vue-jstree.umd.js",
   "private": false,
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zdy1988/vue-jstree.git"
+    "url": "https://github.com/ventralnet/vue3-jstree.git"
   },
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build --target lib --name vue-jstree src/index.js",
+    "lint": "vue-cli-service lint",
+    "pack": "npm pack",
+    "clean": "rm -rf dist"
   },
-  "dependencies": {},
+  "peerDependencies": {
+    "core-js": "^3.8.3",
+    "vue": "^3.2.13"
+  },
   "devDependencies": {
-    "babel-core": "^6.0.0",
-    "babel-loader": "^6.0.0",
-    "babel-preset-env": "^1.5.1",
-    "cross-env": "^3.0.0",
-    "css-loader": "^0.25.0",
-    "file-loader": "^0.11.2",
-    "less": "^2.7.2",
-    "less-loader": "^4.0.5",
-    "style-loader": "^0.18.2",
-    "vue": "^2.3.3",
-    "vue-loader": "^12.1.0",
-    "vue-template-compiler": "^2.3.3",
-    "webpack": "^2.6.1",
-    "webpack-dev-server": "^2.4.5"
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "less": "^4.0.0",
+    "less-loader": "^8.0.0"
   }
 }
+
